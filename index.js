@@ -3,11 +3,11 @@
  *       Github: @BRadHoc/bdsx-sleep  Discord: @Brad (BDSX)
  */
 
-"use strict";
-
+/* Configs */
 let OnePlayerSleep = false;
 
 
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { bedrockServer } = require("bdsx/launcher");
 const { events } = require("bdsx/event");
