@@ -1,8 +1,7 @@
 # bdsx-sleep
 ![logo](logo-sml.png)
 
-A 50% / 1 Player Sleep script for @BDSX/bdsx
-
+A 50% / 1 Player Sleep script for [@BDSX/bdsx](https://github.com/bdsx/bdsx)
 ## Configuration
 
 Change:
@@ -11,15 +10,17 @@ Change:
 let OnePlayerSleep = true;
 ```
 
-to enable One Player Sleep, otherwise it's default 50% of the players online
+in `index.js` to enable One Player Sleep, otherwise it's default 50% of the players online
 
-## Usage
-* Requirements
-    * [bdsx](https://github.com/bdsx/bdsx) Please make sure your node is up to date.
-
-To download, clone the repo to your `bdsx/plugins` directory:
+## Installation
+1. To download, clone the repo to your `bdsx/plugins` directory:
 ```bash
 git clone https://github.com/BRadHoc/bdsx-sleep.git bdsx-sleep
+```
+
+2. Edit `index.js` in the root directory of `bdsx` to include:
+```js
+require("./plugins/bdsx-sleep");
 ```
 
 ### How to use?
