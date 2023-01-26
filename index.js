@@ -45,7 +45,7 @@ events.playerSleepInBed.on((ev) => {
 
                         const com = bedrockServer.executeCommand("time query daytime", command.CommandResultType.OutputAndData);
                         const time = parseInt(com.data.statusMessage.substring(11));
-                        const t_offset = (23999-time)+1000; //Set time to 1000
+                        const t_offset = (23999-time);
                         bedrockServer.executeCommand(`time add ${t_offset}`);
 
                         if (OnePlayerSleep) bedrockServer.executeCommand(`tellraw @a {"rawtext":[{"text":"§b${ev.player.getNameTag()} just slept for everyone!"}]}`, () => { });
