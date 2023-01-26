@@ -1,11 +1,12 @@
 /**
- * Player Sleep Plugin - Enables 50% or 1 Player to sleep for everyone!
- *       Github: @BRadHoc/bdsx-sleep  Discord: @Brad (BDSX)
+ *   Player Sleep Plugin - Enables 50% or 1 Player to sleep for everyone!
+ *         Github: @BRadHoc/bdsx-sleep  Discord: @Brad (BDSX)
  */
 
-/* Configs */
+/* ------- Configs ---------- */
 let OnePlayerSleep = false;
-
+let SleepRemind = true;
+/*----------------------------*/
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
@@ -21,7 +22,6 @@ events.serverOpen.on(() => {
     console.log('[@BRadHoc/bdsx-sleep] ' + (OnePlayerSleep ? "Setting: One Player Sleep (Enabled)" : "Setting: 50% of online players are required to sleep"));
 });
 
-let sleepRemind = true;
 let wakeUp = procHacker.js('?stopSleepInBed@ServerPlayer@@UEAAX_N0@Z', void_t, {this: ServerPlayer}, bool_t, bool_t);
 events.playerSleepInBed.on((ev) => {
     setTimeout(() => {
@@ -30,13 +30,13 @@ events.playerSleepInBed.on((ev) => {
             const players = bedrockServer.level.getPlayers();
             const sleepingPlayers = players.filter((player) => player.isSleeping()).length;
 
-            if (sleepRemind) {
-                sleepRemind = false;
+            if (SleepRemind) {
+                SleepRemind = false;
                 if (!OnePlayerSleep) {
                     bedrockServer.executeCommand(`tellraw @a {"rawtext":[{"text":"§bThere are ${sleepingPlayers}/${players.length} players in-bed."}]}`, () => { });
                     bedrockServer.executeCommand('tellraw @a {"rawtext":[{"text":"§b' + (!OnePlayerSleep ? "50% of the players online are required to sleep." : ev.player.getNameTag().toString() + " just slept for everyone...") + '"}]}', () => { });
                 }
-                setTimeout(() => { sleepRemind = true; }, 30000);
+                setTimeout(() => { SleepRemind = true; }, 30000);
             }
 
             setTimeout(() => {
@@ -47,9 +47,9 @@ events.playerSleepInBed.on((ev) => {
                                 if (players[x].isSleeping()) {
                                     wakeUp.call(players[x], true, true);
                                 }
-                                let reset = players[x].save();
-                                reset.SleepTimer._value = 0;
-                                players[x].load(reset);
+                                let player = players[x].save();
+                                player.SleepTimer._value = 0;
+                                players[x].load(player);
                             }
                         }
 
