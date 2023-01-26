@@ -1,10 +1,10 @@
 {
   "name": "@bdsx/bdsx-sleep",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "BRadHoc",
   "license": "MIT",
   "bdsxPlugin": true,
   "scripts": { },
