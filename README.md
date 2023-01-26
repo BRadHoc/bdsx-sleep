@@ -12,12 +12,12 @@ let OnePlayerSleep = true;
 
 in `index.js` to enable One Player Sleep, otherwise it's default 50% of the players online
 
-#
+
 ## Install via NPM
 1. Open `package-manager.bat` / `package-manager.sh`
 2. Select `@bdsx/bdsx-sleep`
 
-#
+
 ## Manual Installation
 1. Navigate to your bdsx `plugins` folder
 ```bash
