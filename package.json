@@ -1,7 +1,7 @@
 {
   "name": "@bdsx/bdsx-sleep",
   "version": "1.0.3",
-  "description": "",
+  "description": "Enables 50%/One of the players online to sleep for everyone!",
   "main": "index.js",
   "keywords": [],
   "author": "BRadHoc",
