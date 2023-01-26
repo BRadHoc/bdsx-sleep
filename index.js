@@ -44,7 +44,7 @@ events.playerSleepInBed.on((ev) => {
                         }
 
                         const com = bedrockServer.executeCommand("time query daytime", command.CommandResultType.OutputAndData);
-                        const time = parseInt(com.data.statusMessage.substring(11)) % 24000;
+                        const time = parseInt(com.data.statusMessage.substring(11));
                         const t_offset = (23999-time)+1000; //Set time to 1000
                         bedrockServer.executeCommand(`time add ${t_offset}`);
 
