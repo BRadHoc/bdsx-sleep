@@ -1,17 +1,13 @@
 {
   "name": "@bdsx/bdsx-sleep",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bdsxPlugin": true,
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
-    "prepare": "tsc || exit 0"
-  },
+  "scripts": { },
   "devDependencies": {
     "bdsx": "file:../bdsx"
   }
