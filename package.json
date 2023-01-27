@@ -3,12 +3,20 @@
   "version": "1.0.0",
   "description": "Enables 50%/One of the players online to sleep for everyone!",
   "main": "index.js",
-  "keywords": [],
+  "keywords": ["minecraft","bdsx","one player", "50%","sleep"],
   "author": "BRadHoc",
   "license": "MIT",
   "bdsxPlugin": true,
   "scripts": { },
   "devDependencies": {
     "bdsx": "file:../bdsx"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BRadHoc/bdsx-sleep.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BRadHoc/bdsx-sleep/issues"
+  },
+  "homepage": "https://github.com/BRadHoc/bdsx-sleep#readme"
 }
