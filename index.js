@@ -32,6 +32,8 @@ events.playerSleepInBed.on((ev) => {
 
             if (SleepRemind && !OnePlayerSleep) {
                 SleepRemind = false;
+                    bedrockServer.executeCommand(`tellraw @a {"rawtext":[{"text":"§bThere are ${sleepingPlayers}/${players.length} players in-bed."}]}`, () => { });
+                    bedrockServer.executeCommand('tellraw @a {"rawtext":[{"text":"§b' + (!OnePlayerSleep ? "50% of the players online are required to sleep." : ev.player.getNameTag().toString() + " just slept for everyone...") + '"}]}', () => { });
                 setTimeout(() => { SleepRemind = true; }, 30000);
             }
 
