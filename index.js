@@ -38,6 +38,14 @@ events.playerSleepInBed.on((ev) => {
             setTimeout(() => {
                 if (sleepingPlayers >= players.length / 2 || OnePlayerSleep) {
                     if (ev.player.isSleeping()) {
+                        let weather = bedrockServer.executeCommand("weather query", command.CommandResultType.OutputAndData);
+                        weather = weather.data.statusMessage.substring(18);
+                        if (weather === "thunder" || weather === "rain") bedrockServer.executeCommand(`weather clear`);
+                        let time = bedrockServer.executeCommand("time query daytime", command.CommandResultType.OutputAndData);
+                        time = parseInt(time.data.statusMessage.substring(11));
+                        const t_offset = (23999-time);
+                        bedrockServer.executeCommand(`time add ${t_offset}`);
+
                         for (let x = 0; x < players.length; x++) {
                             if (players[x].isPlayer()) {
                                 if (players[x].isSleeping()) {
@@ -48,11 +56,6 @@ events.playerSleepInBed.on((ev) => {
                                 players[x].load(player);
                             }
                         }
-
-                        const com = bedrockServer.executeCommand("time query daytime", command.CommandResultType.OutputAndData);
-                        const time = parseInt(com.data.statusMessage.substring(11));
-                        const t_offset = (23999-time);
-                        bedrockServer.executeCommand(`time add ${t_offset}`);
 
                         if (OnePlayerSleep) bedrockServer.executeCommand(`tellraw @a {"rawtext":[{"text":"§b${ev.player.getNameTag()} just slept for everyone!"}]}`, () => { });
                         bedrockServer.executeCommand(`tellraw @a {"rawtext":[{"text":"§aGood Morning!"}]}`, () => { });
