@@ -1,13 +1,19 @@
 {
   "name": "@bdsx/bdsx-sleep",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Enables 50%/One of the players online to sleep for everyone!",
   "main": "index.js",
-  "keywords": ["minecraft","bdsx","one player", "50%","sleep"],
+  "keywords": [
+    "minecraft",
+    "bdsx",
+    "one player",
+    "50%",
+    "sleep"
+  ],
   "author": "BRadHoc",
   "license": "MIT",
   "bdsxPlugin": true,
-  "scripts": { },
+  "scripts": {},
   "devDependencies": {
     "bdsx": "file:../bdsx"
   },
